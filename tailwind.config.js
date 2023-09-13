@@ -6,6 +6,9 @@ module.exports = {
       screens: {
         "max-sm": { max: "640px" }, // Adding a custom breakpoint for max-width: 640px
       },
+      fontFamily: {
+        sans: ["Montserrat", "sans"],
+      },
     },
   },
   plugins: [],
