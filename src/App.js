@@ -1,5 +1,5 @@
 import "./App.css";
-import { SignIn } from "./pages/page-index";
+import { SignIn, Dashboard } from "./pages/page-index";
 
 function App() {
   return (
