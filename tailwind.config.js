@@ -9,6 +9,14 @@ module.exports = {
       fontFamily: {
         sans: ["Montserrat", "Lato", "sans"],
       },
+      colors: {
+        bgGrey: "#F8FAFF",
+        assignBlue: "#4285F4",
+        bgWhite: "#FFFFFF",
+      },
+      backgroundImage: {
+        "gradient-bg": "linear-gradient(180deg, #4285F4 0%, #286DE0 100%)", // Define the gradient background
+      },
     },
   },
   plugins: [],
