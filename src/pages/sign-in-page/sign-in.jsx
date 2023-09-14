@@ -97,14 +97,16 @@ export const SignIn = () => {
       </div>
       {/* sign in auth */}
       <div className="bg-bgGrey max-sm:bg-assignBlue w-1/2 max-sm:w-full max-sm:h-full flex flex-col items-start max-sm:items-center ">
-        <div className="mt-40 ml-20 max-sm:ml-0 max-sm:mt-36">
+        <div className="mt-40 ml-20 max-sm:ml-0 max-sm:mt-16">
           <h1 className="absolute top-5 left-5 text-sm tracking-wide font-black sm:hidden text-white ">
             LOGO
           </h1>
-          <h1 className="absolute top-16 right-12 font-sans text-white font-[700] text-5xl tracking-wide">
+          <h1 className=" font-sans text-white font-[700] text-6xl tracking-wider sm:hidden">
             Board.
           </h1>
-          <h1 className="text-4xl font-black font-sans">Sign In</h1>
+          <h1 className="text-4xl font-black font-sans max-sm:mt-10">
+            Sign In
+          </h1>
           <p className="text-base font-bold font-sans mt-2">
             Sign in to your account
           </p>
