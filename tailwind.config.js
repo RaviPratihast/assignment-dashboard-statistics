@@ -1,10 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "max-sm": { max: "640px" }, // Adding a custom breakpoint for max-width: 640px
+      },
+      fontFamily: {
+        sans: ["Montserrat", "Lato", "sans"],
+      },
+      colors: {
+        bgGrey: "#F8FAFF",
+        assignBlue: "#4285F4",
+        bgWhite: "#FFFFFF",
+      },
+      backgroundImage: {
+        "gradient-bg": "linear-gradient(180deg, #4285F4 0%, #286DE0 100%)", // Define the gradient background
+      },
+    },
   },
   plugins: [],
-}
+};
