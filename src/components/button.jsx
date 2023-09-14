@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 
 export const Button = ({ className, onClick, children }) => {
   return (
