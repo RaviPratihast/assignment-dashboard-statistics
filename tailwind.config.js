@@ -15,6 +15,7 @@ module.exports = {
         bgWhite: "#FFFFFF",
         offWhite: "#e2e8f0",
         lightGreen: "#98D89E",
+        lightPink: "#EE8484",
       },
       backgroundImage: {
         "gradient-bg": "linear-gradient(180deg, #4285F4 0%, #286DE0 100%)", // Define the gradient background
