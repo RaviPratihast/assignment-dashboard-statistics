@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "max-sm": { max: "640px" }, // Adding a custom breakpoint for max-width: 640px
+        "max-sm": { max: "640px" },
+        "max-md": { max: "768px" },
+        "max-lg": { max: "1024px" },
+        "max-xl": { max: "1280px" },
       },
       fontFamily: {
         sans: ["Montserrat", "Lato", "sans"],
