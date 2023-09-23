@@ -1,9 +1,34 @@
 import React, { useState } from "react";
 import { Button, Input } from "./component-index";
+import { useProfile } from "../context/add-profile-context";
 
 export const Modal = ({ isOpen, onClose }) => {
+  const { state, dispatch } = useProfile();
   const [toggleBetweenSocialBasic, setToggleBetweenSocialBasic] =
     useState(true);
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Contact, setContact] = useState("");
+  const [Instagram, setInstagram] = useState("");
+  const [Youtube, setYoutube] = useState("");
+
+  const handleSubmit = () => {
+    const profileDetail = {
+      Name: Name,
+      Email: Email,
+      Contact: Contact,
+      Instagram: Instagram,
+      Youtube: Youtube,
+    };
+    // console.log("Name", profileDetail);
+    dispatch({ type: "Add_Profile", payload: profileDetail });
+    setName("");
+    setEmail("");
+    setContact("");
+    setInstagram("");
+    setYoutube("");
+  };
+//   console.log("state", state);
   return (
     isOpen && (
       <div className="fixed inset-0 flex items-center justify-center  z-50">
@@ -75,18 +100,24 @@ export const Modal = ({ isOpen, onClose }) => {
                     type="text"
                     placeholder="John Doe"
                     className="border rounded-md  p-2 text-sm"
+                    value={Name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                   <Input
                     label="Enter Email*"
                     type="email"
                     placeholder="John@xyz.com"
                     className="border rounded-md  p-2 text-sm"
+                    value={Email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <Input
                     label="Enter Phone*"
                     type="tel"
                     placeholder="9123445677"
                     className="border rounded-md  p-2 text-sm"
+                    value={Contact}
+                    onChange={(e) => setContact(e.target.value)}
                   />
                   <div className="flex justify-end">
                     <Button className="rounded-md   h-8 w-12 p-1 text-white text-xs bg-assignBlue ">
@@ -101,19 +132,26 @@ export const Modal = ({ isOpen, onClose }) => {
                     type="text"
                     placeholder="Eg. ..instagram.com/username"
                     className="border rounded-md  p-2 text-sm"
+                    value={Instagram}
+                    onChange={(e) => setInstagram(e.target.value)}
                   />
                   <Input
                     label="Youtube Link (Optional)"
                     type="email"
                     placeholder="Eg. ..youtube/username"
                     className="border rounded-md p-2 text-sm"
+                    value={Youtube}
+                    onChange={(e) => setYoutube(e.target.value)}
                   />
 
                   <div className="flex justify-end gap-2">
                     <Button className="rounded-md   h-8 w-12 p-1 text-black font-bold text-xs bg-white border border-gray-400 ">
                       Back
                     </Button>
-                    <Button className="rounded-md   h-8 w-12 p-1 text-white text-xs bg-assignBlue ">
+                    <Button
+                      className="rounded-md   h-8 w-12 p-1 text-white text-xs bg-assignBlue "
+                      onClick={() => handleSubmit()}
+                    >
                       Done
                     </Button>
                   </div>

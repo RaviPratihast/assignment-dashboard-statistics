@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BarChart } from "../../charts/bar-chart";
 import { PieChart } from "../../charts/pie-chart";
 import { Modal } from "../../components/component-index";
+import { useProfile } from "../../context/add-profile-context";
 
 //   return (
 //     <div className="h-screen w-screen flex bg-bgGrey">
@@ -225,6 +226,7 @@ import { Modal } from "../../components/component-index";
 // };
 
 export const Dashboard = () => {
+  const { state } = useProfile();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -233,6 +235,7 @@ export const Dashboard = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  // console.log(state);
   return (
     <div className="border md:h-screen w-screen max-sm:border-assignBlue max-sm:border-2 flex pl-20 pr-20 pt-10 sm:pb-10">
       <div className=" w-full h-full flex gap-20">
