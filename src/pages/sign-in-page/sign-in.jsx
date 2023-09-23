@@ -1,14 +1,16 @@
 import React from "react";
 import { Button } from "../../components/button";
+import { useNavigate } from "react-router";
 
 export const SignIn = () => {
+  const navigate  = useNavigate();
   return (
     <div className="h-screen w-screen flex max-sm:flex-col border border-assignBlue  bg-bgGrey">
       <div className=" w-1/2 h-full max-sm:w-full max-sm:h-1/2 max-sm:hidden">
         <h1 className="absolute top-12 left-12 text-sm tracking-wide font-black text-white ">
           LOGO
         </h1>
-        <h1 className="absolute top-96 left-56 font-sans text-white font-[700] text-5xl tracking-wide">
+        <h1 className="absolute top-96 left-56 font-sans text-white font-[700] text-5xl tracking-wide" onClick={()=>navigate("/dashboard")}>
           Board.
         </h1>
         <div className="absolute bottom-10 left-40 flex items-center gap-6">
