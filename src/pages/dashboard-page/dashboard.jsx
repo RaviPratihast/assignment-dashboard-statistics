@@ -1,6 +1,7 @@
 import React from "react";
 import { BarChart } from "../../charts/bar-chart";
 import { PieChart } from "../../charts/pie-chart";
+import { Modal } from "../../components/component-index";
 // export const Dashboard = () => {
 //   return (
 //     <div className="h-screen w-screen flex bg-bgGrey">
@@ -653,6 +654,7 @@ export const Dashboard = () => {
                 <h3 className="text-sm font-bold text-[#8C8C8C]">
                   Add Profile
                 </h3>
+                <Modal />
               </div>
             </div>
           </div>
