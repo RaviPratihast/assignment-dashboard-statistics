@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { BarChart } from "../../charts/bar-chart";
 import { PieChart } from "../../charts/pie-chart";
 import { Modal } from "../../components/component-index";
-// export const Dashboard = () => {
+
 //   return (
 //     <div className="h-screen w-screen flex bg-bgGrey">
 //       <div className="bg-assignBlue m-10 rounded-lg flex flex-col justify-between">
@@ -225,6 +225,14 @@ import { Modal } from "../../components/component-index";
 // };
 
 export const Dashboard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="border md:h-screen w-screen max-sm:border-assignBlue max-sm:border-2 flex pl-20 pr-20 pt-10 sm:pb-10">
       <div className=" w-full h-full flex gap-20">
@@ -642,6 +650,7 @@ export const Dashboard = () => {
                     height="52"
                     viewBox="0 0 52 52"
                     fill="none"
+                    onClick={openModal}
                   >
                     <path
                       fill-rule="evenodd"
@@ -654,7 +663,7 @@ export const Dashboard = () => {
                 <h3 className="text-sm font-bold text-[#8C8C8C]">
                   Add Profile
                 </h3>
-                <Modal />
+                <Modal isOpen={isModalOpen} onClose={closeModal} />
               </div>
             </div>
           </div>
