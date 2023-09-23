@@ -24,7 +24,7 @@ const options = {
 
 export const PieChart = () => {
   return (
-    <div>
+    <div className="max-sm:h-40">
       <Doughnut data={data} options={options} />
     </div>
   );

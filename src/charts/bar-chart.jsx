@@ -8,7 +8,7 @@ import { chartBarData } from "./utils/bar-chart";
 Chart.register(CategoryScale);
 export function BarChart() {
   return (
-    <div className="sm:w-full max-md:36 lg:58">
+    <div className="sm:w-full h-auto  max-lg:m-0">
       <Bar
         data={chartBarData}
         options={{

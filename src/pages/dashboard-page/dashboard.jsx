@@ -1,5 +1,6 @@
 import React from "react";
-
+import { BarChart } from "../../charts/bar-chart";
+import { PieChart } from "../../charts/pie-chart";
 // export const Dashboard = () => {
 //   return (
 //     <div className="h-screen w-screen flex bg-bgGrey">
@@ -224,9 +225,9 @@ import React from "react";
 
 export const Dashboard = () => {
   return (
-    <div className="border border-green-500 h-screen w-screen flex pl-44 pr-44 pt-10 pb-10">
+    <div className="border md:h-screen w-screen max-sm:border-assignBlue max-sm:border-2 flex pl-20 pr-20 pt-10 sm:pb-10">
       <div className=" w-full h-full flex gap-20">
-        <div className="w-1/6">
+        <div className="w-1/6 max-lg:hidden">
           <div className="bg-assignBlue rounded-lg flex flex-col justify-between h-full">
             <div className="flex flex-col p-7">
               <h1 className=" font-sans text-white font-bold  text-3xl mt-4 tracking-wider">
@@ -368,15 +369,29 @@ export const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="border border-yellow-500 w-5/6">
-          <div className="flex justify-between p-2">
-            <h1 className="font-bold text-md tracking-wider">Dashboard</h1>
-            <div className="flex gap-4 items-center mr-3 ">
-              <div className="flex bg-white items-center justify-center rounded-lg  gap-2 ">
+        <div className=" w-5/6 max-lg:w-full max-lg:flex max-lg:flex-col">
+          {/* heading */}
+          <div className="flex justify-between p-2 max-lg:m-0 max-sm:bg-assignBlue max-sm:rounded-lg  ">
+            <h1 className="font-bold text-md tracking-wider max-md:hidden">
+              Dashboard
+            </h1>
+
+            <div className="flex gap-4 items-center mr-3 max-lg:m-0 ">
+              <div className="sm:hidden relative">
+                <img
+                  src="/assets/image-1.png"
+                  alt=""
+                  className="rounded-full w-7 h-7"
+                />
+                <div className="w-3 h-3 absolute top-[-4px] right-[-9px] bg-red-500 rounded-full flex items-center justify-center p-2 text-xs font-bold text-white">
+                  1
+                </div>
+              </div>
+              <div className="flex bg-white items-center justify-center rounded-lg  gap-2 max-sm:gap-0">
                 <input
                   type="search"
                   placeholder="Search...."
-                  className=" w-40 placeholder:text-xs flex justify-center pl-2 ml-3"
+                  className=" w-40 placeholder:text-xs flex justify-center pl-2 ml-3 bg-white"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -384,7 +399,7 @@ export const Dashboard = () => {
                   height="12"
                   viewBox="0 0 13 12"
                   fill="none"
-                  className="mr-4"
+                  className="mr-4 max-lg:m-0"
                 >
                   <circle cx="5" cy="5" r="4.5" stroke="#858585" />
                   <line
@@ -402,14 +417,14 @@ export const Dashboard = () => {
                 height="22"
                 viewBox="0 0 19 22"
                 fill="none"
-                className=""
+                className="max-sm:hidden"
               >
                 <path
                   d="M16.3861 12.6564V8.91122C16.3861 5.55139 14.2011 2.72107 11.2411 1.86988C10.9481 1.09912 10.2321 0.55603 9.38611 0.55603C8.54011 0.55603 7.82411 1.09912 7.53111 1.86988C4.57111 2.72211 2.38611 5.55139 2.38611 8.91122V12.6564L0.679109 14.4392C0.586067 14.536 0.512279 14.6511 0.461994 14.7778C0.411709 14.9046 0.385919 15.0404 0.386109 15.1776V17.2664C0.386109 17.5434 0.491466 17.809 0.679003 18.0049C0.866539 18.2008 1.12089 18.3108 1.38611 18.3108H17.3861C17.6513 18.3108 17.9057 18.2008 18.0932 18.0049C18.2808 17.809 18.3861 17.5434 18.3861 17.2664V15.1776C18.3863 15.0404 18.3605 14.9046 18.3102 14.7778C18.2599 14.6511 18.1862 14.536 18.0931 14.4392L16.3861 12.6564ZM16.3861 16.222H2.38611V15.61L4.09311 13.8272C4.18615 13.7304 4.25994 13.6153 4.31023 13.4886C4.36051 13.3618 4.3863 13.226 4.38611 13.0888V8.91122C4.38611 6.03181 6.62911 3.68923 9.38611 3.68923C12.1431 3.68923 14.3861 6.03181 14.3861 8.91122V13.0888C14.3861 13.3666 14.4911 13.6319 14.6791 13.8272L16.3861 15.61V16.222ZM9.38611 21.444C10.0054 21.4448 10.6096 21.2441 11.1146 20.8697C11.6196 20.4954 12.0004 19.966 12.2041 19.3552H6.56811C6.77177 19.966 7.15259 20.4954 7.65762 20.8697C8.16265 21.2441 8.76681 21.4448 9.38611 21.444Z"
                   fill="black"
                 />
               </svg>
-              <div className="">
+              <div className="max-sm:hidden">
                 <img
                   src="/assets/image-1.png"
                   alt=""
@@ -418,10 +433,11 @@ export const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className=" flex gap-6 mt-4">
+          {/* cards */}
+          <div className=" flex gap-6 mt-1 flex-wrap">
             <div className="border-2 border-[#e2e8f0]  flex-1 rounded-2xl p-3 shadow-lg relative ">
               {/*  */}
-              <div className="h-9 w-9 bg-lightGreen rounded-full flex items-center justify-center ">
+              <div className="h-8 w-8 bg-lightGreen rounded-full flex items-center justify-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -458,7 +474,7 @@ export const Dashboard = () => {
             </div>
             <div className="border-2 border-[#e2e8f0]  flex-1 rounded-2xl p-3 shadow-lg relative ">
               {/*  */}
-              <div className="h-9 w-9 bg-[#DEBF85] rounded-full flex items-center justify-center ">
+              <div className="h-8 w-8 bg-[#DEBF85] rounded-full flex items-center justify-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -482,7 +498,7 @@ export const Dashboard = () => {
             </div>
             <div className="border-2 border-[#e2e8f0]  flex-1 rounded-2xl p-3 shadow-lg relative ">
               {/*  */}
-              <div className="h-9 w-9 bg-lightPink rounded-full flex items-center justify-center ">
+              <div className="h-8 w-8 bg-lightPink rounded-full flex items-center justify-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -506,7 +522,7 @@ export const Dashboard = () => {
             </div>
             <div className="border-2 border-[#e2e8f0]  flex-1 rounded-2xl p-3 shadow-lg relative ">
               {/*  */}
-              <div className="h-9 w-9 bg-[#A9B0E5] rounded-full flex items-center justify-center ">
+              <div className="h-8 w-8 bg-[#A9B0E5] rounded-full flex items-center justify-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -526,6 +542,117 @@ export const Dashboard = () => {
                 <div className="text-xs font-bold p-2 rounded-xl text-[#34d399] bg-[#f0fdf4]">
                   +4.7%
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-3 p-4 flex flex-col rounded-2xl shadow-lg border-2 border-[#e2e8f0] ">
+            <div className="flex justify-between">
+              <div className="">
+                <h1 className="font-extrabold tracking-wider text-sm">
+                  Activities
+                </h1>
+                <p className="text-xs tracking-wider">May-June 2021</p>
+              </div>
+              <div className="flex  items-center gap-7 max-sm:hidden">
+                {/* guest */}
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#EE8484]"></div>
+                  <h2 className="text-xs font-extrabold tracking-wider">
+                    Guest
+                  </h2>
+                </div>
+                {/* user */}
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#98D89E]"></div>
+                  <h2 className="text-xs font-extrabold tracking-wider">
+                    User
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <BarChart />
+            <div className="flex  items-center gap-7 sm:hidden max-sm:justify-center">
+              {/* guest */}
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#EE8484]"></div>
+                <h2 className="text-xs font-extrabold tracking-wider">Guest</h2>
+              </div>
+              {/* user */}
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#98D89E]"></div>
+                <h2 className="text-xs font-extrabold tracking-wider">User</h2>
+              </div>
+            </div>
+          </div>
+          <div className="mt-3 rounded-2xl flex  gap-5 md:gap-10  max-lg:flex-col">
+            <div className="shadow-lg  rounded-2xl border-2 border-[#e2e8f0] w-1/2 sm:h-52 max-lg:w-full  p-5">
+              <div className="flex justify-between items-center">
+                <h1 className="text-sm font-extrabold">Top products</h1>
+                <p className="text-xs">May-June 2021</p>
+              </div>
+              {/* pie chart and Statistics */}
+              <div className="flex items-center justify-between mt-4 max-sm:flex-col">
+                {/* chart */}
+                <div className="w-1/3 max-sm:w-full max-sm:flex max-sm:justify-center ">
+                  <PieChart />
+                </div>
+                {/* stats */}
+                <div className="w-2/3 flex flex-col  items-center gap-7 max-sm:w-full ">
+                  <div className="flex sm:flex-col items-start ml-10 max-sm:m-0 gap-3 max-sm:gap-3">
+                    {/* stats 1 */}
+                    <div className="flex gap-2 flex-wrap">
+                      <div className="w-2 h-2 rounded-full mt-2 bg-[#98D89E]"></div>
+                      <div className="flex flex-col items-start">
+                        <h1 className="font-extrabold text-sm">Basic Tees</h1>
+                        <p className="text-xs">55%</p>
+                      </div>
+                    </div>
+                    {/* stats 2 */}
+                    <div className="flex gap-2 flex-wrap">
+                      <div className="w-2 h-2 rounded-full mt-2 bg-[#f6dc7d]"></div>
+                      <div className="flex flex-col items-start">
+                        <h1 className="font-extrabold text-sm">
+                          Custom Short Pants
+                        </h1>
+                        <p className="text-xs">55%</p>
+                      </div>
+                    </div>
+                    {/* stats 3 */}
+                    <div className="flex gap-2 flex-wrap">
+                      <div className="w-2 h-2 rounded-full mt-2 bg-[#EE8484]"></div>
+                      <div className="flex flex-col items-start">
+                        <h1 className="font-extrabold text-sm">
+                          Super Hoodies
+                        </h1>
+                        <p className="text-xs">14%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* add  */}
+            <div className=" shadow-lg border-2  rounded-2xl border-[#e2e8f0] w-1/2 max-lg:w-full  flex items-center justify-center max-sm:mb-4">
+              <div className="flex flex-col items-center justify-center gap-3 max-sm:h-60">
+                <div className="h-16 w-16 rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="52"
+                    height="52"
+                    viewBox="0 0 52 52"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M26 10.0049C26.8835 10.0049 27.5997 10.7211 27.5997 11.6046L27.5997 24.7097L40.7048 24.7096C41.5883 24.7096 42.3045 25.4258 42.3045 26.3093C42.3045 27.1927 41.5883 27.9089 40.7048 27.9089L27.5998 27.909L27.5998 41.0139C27.5998 41.8974 26.8836 42.6136 26.0002 42.6136C25.1167 42.6136 24.4005 41.8974 24.4005 41.0139L24.4004 27.909L11.2953 27.9089C10.4119 27.9089 9.69567 27.1927 9.69568 26.3092C9.69568 25.4258 10.4119 24.7096 11.2953 24.7096L24.4004 24.7097L24.4003 11.6046C24.4003 10.7211 25.1165 10.0049 26 10.0049Z"
+                      fill="#999CA0"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-sm font-bold text-[#8C8C8C]">
+                  Add Profile
+                </h3>
               </div>
             </div>
           </div>
