@@ -1,10 +1,14 @@
 import "./App.css";
-import { SignIn } from "./pages/page-index";
+import { Routes, Route } from "react-router-dom";
+import { SignIn, Dashboard } from "./pages/page-index";
 
 function App() {
   return (
     <div className="text-lg">
-      <SignIn />
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </div>
   );
 }
