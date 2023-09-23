@@ -28,7 +28,7 @@ export const Modal = ({ isOpen, onClose }) => {
     setInstagram("");
     setYoutube("");
   };
-//   console.log("state", state);
+  //   console.log("state", state);
   return (
     isOpen && (
       <div className="fixed inset-0 flex items-center justify-center  z-50">
@@ -120,7 +120,10 @@ export const Modal = ({ isOpen, onClose }) => {
                     onChange={(e) => setContact(e.target.value)}
                   />
                   <div className="flex justify-end">
-                    <Button className="rounded-md   h-8 w-12 p-1 text-white text-xs bg-assignBlue ">
+                    <Button
+                      className="rounded-md   h-8 w-12 p-1 text-white text-xs bg-assignBlue "
+                      onClick={() => setToggleBetweenSocialBasic(false)}
+                    >
                       Next
                     </Button>
                   </div>
@@ -145,7 +148,10 @@ export const Modal = ({ isOpen, onClose }) => {
                   />
 
                   <div className="flex justify-end gap-2">
-                    <Button className="rounded-md   h-8 w-12 p-1 text-black font-bold text-xs bg-white border border-gray-400 ">
+                    <Button
+                      className="rounded-md   h-8 w-12 p-1 text-black font-bold text-xs bg-white border border-gray-400 "
+                      onClick={() => setToggleBetweenSocialBasic(true)}
+                    >
                       Back
                     </Button>
                     <Button
