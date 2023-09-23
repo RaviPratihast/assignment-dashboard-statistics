@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Input } from "./component-index";
 import { useProfile } from "../context/add-profile-context";
+import { v4 as uuid } from "uuid";
 
 export const Modal = ({ isOpen, onClose }) => {
   const { state, dispatch } = useProfile();
@@ -14,6 +15,7 @@ export const Modal = ({ isOpen, onClose }) => {
 
   const handleSubmit = () => {
     const profileDetail = {
+      id: uuid(),
       Name: Name,
       Email: Email,
       Contact: Contact,
