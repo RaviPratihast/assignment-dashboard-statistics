@@ -10,7 +10,7 @@ export const SignIn = () => {
         <h1 className="absolute top-12 left-12 text-sm tracking-wide font-black text-white ">
           LOGO
         </h1>
-        <h1 className="absolute top-96 left-56 font-sans text-white font-[700] text-5xl tracking-wide" onClick={()=>navigate("/dashboard")}>
+        <h1 className="absolute top-96 left-56 font-sans text-white font-[700] text-5xl tracking-wide cursor-pointer" onClick={()=>navigate("/dashboard")}>
           Board.
         </h1>
         <div className="absolute bottom-10 left-40 flex items-center gap-6">
