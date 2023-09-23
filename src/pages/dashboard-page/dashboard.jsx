@@ -651,6 +651,7 @@ export const Dashboard = () => {
                     viewBox="0 0 52 52"
                     fill="none"
                     onClick={openModal}
+                    className="cursor-pointer"
                   >
                     <path
                       fill-rule="evenodd"
