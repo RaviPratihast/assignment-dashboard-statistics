@@ -22,7 +22,7 @@ export const Modal = ({ isOpen, onClose }) => {
       Instagram: Instagram,
       Youtube: Youtube,
     };
-    // console.log("Name", profileDetail);
+
     dispatch({ type: "Add_Profile", payload: profileDetail });
     setName("");
     setEmail("");
@@ -30,12 +30,12 @@ export const Modal = ({ isOpen, onClose }) => {
     setInstagram("");
     setYoutube("");
   };
-  //   console.log("state", state);
+
   return (
     isOpen && (
       <div className="fixed inset-0 flex items-center justify-center  z-50">
         <div className="modal-overlay absolute inset-0 bg-black opacity-50"></div>
-        {/* modal window */}
+
         <div className=" bg-white w-1/3  flex flex-wrap rounded-lg shadow-lg z-50 overflow-y-auto">
           <div className=" flex flex-col py-4 text-left  w-full  px-6">
             <div
@@ -92,8 +92,6 @@ export const Modal = ({ isOpen, onClose }) => {
                     Contact
                   </h6>
                 </div>
-
-                {/* contact page */}
               </div>
               {toggleBetweenSocialBasic ? (
                 <div className="mt-7 flex flex-col gap-4">
@@ -165,11 +163,6 @@ export const Modal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
               )}
-
-              {/* social Page */}
-            </div>
-            <div className="flex items-end justify-end w-full">
-              {/* <button>Next</button> */}
             </div>
           </div>
         </div>
