@@ -4,7 +4,7 @@ import { useProfile } from "../context/add-profile-context";
 import { v4 as uuid } from "uuid";
 
 export const Modal = ({ isOpen, onClose }) => {
-  const { state, dispatch } = useProfile();
+  const { dispatch } = useProfile();
   const [toggleBetweenSocialBasic, setToggleBetweenSocialBasic] =
     useState(true);
   const [Name, setName] = useState("");
