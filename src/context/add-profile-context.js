@@ -4,8 +4,9 @@ const ProfileContext = createContext(null);
 
 const useProfile = () => useContext(ProfileContext);
 
-let initialState = [];
-
+let initialState = {
+  profile: [],
+};
 
 const ProfileProvider = ({ children }) => {
   const [state, dispatch] = useReducer(profileReducer, initialState);
