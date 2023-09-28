@@ -3,7 +3,7 @@ import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { getDataFromChartCreator } from "./utils/bar-chart";
-import { useProfile } from "../context/add-profile-context";
+
 import axios from "axios";
 
 Chart.register(CategoryScale);
