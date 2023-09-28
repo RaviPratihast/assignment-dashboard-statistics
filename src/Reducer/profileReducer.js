@@ -7,8 +7,12 @@ function profileReducer(state, action) {
         ...state,
         profile: [...state.profile, action.payload],
       };
-    // case "Add_Data_From_API":
 
+    case "ADD_CHART_DAT":
+      return {
+        ...state,
+        chartDataFromAPI: [...state.chartDataFromAPI, action.payload],
+      };
     default:
       return state;
   }

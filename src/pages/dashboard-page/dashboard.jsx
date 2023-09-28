@@ -570,15 +570,20 @@ export const Dashboard = () => {
                 {/* guest */}
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#EE8484]"></div>
-                  <h2 className="text-xs font-extrabold tracking-wider">
-                    Guest
-                  </h2>
+                  <h2 className="text-xs font-extrabold tracking-wider">Men</h2>
                 </div>
                 {/* user */}
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#98D89E]"></div>
                   <h2 className="text-xs font-extrabold tracking-wider">
-                    User
+                    Women
+                  </h2>
+                </div>
+                {/* user */}
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#f6dc7d]"></div>
+                  <h2 className="text-xs font-extrabold tracking-wider">
+                    Electronics
                   </h2>
                 </div>
               </div>
@@ -594,6 +599,12 @@ export const Dashboard = () => {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#98D89E]"></div>
                 <h2 className="text-xs font-extrabold tracking-wider">User</h2>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#f6dc7d]"></div>
+                <h2 className="text-xs font-extrabold tracking-wider">
+                  Electronics
+                </h2>
               </div>
             </div>
           </div>
@@ -616,28 +627,21 @@ export const Dashboard = () => {
                     <div className="flex gap-2 flex-wrap">
                       <div className="w-2 h-2 rounded-full mt-2 bg-[#98D89E]"></div>
                       <div className="flex flex-col items-start">
-                        <h1 className="font-extrabold text-sm">Basic Tees</h1>
-                        <p className="text-xs">55%</p>
+                        <h1 className="font-extrabold text-sm">Mens</h1>
                       </div>
                     </div>
                     {/* stats 2 */}
                     <div className="flex gap-2 flex-wrap">
                       <div className="w-2 h-2 rounded-full mt-2 bg-[#f6dc7d]"></div>
                       <div className="flex flex-col items-start">
-                        <h1 className="font-extrabold text-sm">
-                          Custom Short Pants
-                        </h1>
-                        <p className="text-xs">55%</p>
+                        <h1 className="font-extrabold text-sm">Women</h1>
                       </div>
                     </div>
                     {/* stats 3 */}
                     <div className="flex gap-2 flex-wrap">
                       <div className="w-2 h-2 rounded-full mt-2 bg-[#EE8484]"></div>
                       <div className="flex flex-col items-start">
-                        <h1 className="font-extrabold text-sm">
-                          Super Hoodies
-                        </h1>
-                        <p className="text-xs">14%</p>
+                        <h1 className="font-extrabold text-sm">Electronics</h1>
                       </div>
                     </div>
                   </div>

@@ -6,6 +6,7 @@ const useProfile = () => useContext(ProfileContext);
 
 let initialState = {
   profile: [],
+  chartDataFromAPI: [],
 };
 
 const ProfileProvider = ({ children }) => {
