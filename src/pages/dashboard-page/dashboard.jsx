@@ -570,15 +570,20 @@ export const Dashboard = () => {
                 {/* guest */}
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#EE8484]"></div>
-                  <h2 className="text-xs font-extrabold tracking-wider">
-                    Guest
-                  </h2>
+                  <h2 className="text-xs font-extrabold tracking-wider">Men</h2>
                 </div>
                 {/* user */}
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#98D89E]"></div>
                   <h2 className="text-xs font-extrabold tracking-wider">
-                    User
+                    Women
+                  </h2>
+                </div>
+                {/* user */}
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#f6dc7d]"></div>
+                  <h2 className="text-xs font-extrabold tracking-wider">
+                    Electronics
                   </h2>
                 </div>
               </div>
@@ -594,6 +599,12 @@ export const Dashboard = () => {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#98D89E]"></div>
                 <h2 className="text-xs font-extrabold tracking-wider">User</h2>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#f6dc7d]"></div>
+                <h2 className="text-xs font-extrabold tracking-wider">
+                  Electronics
+                </h2>
               </div>
             </div>
           </div>
@@ -616,28 +627,21 @@ export const Dashboard = () => {
                     <div className="flex gap-2 flex-wrap">
                       <div className="w-2 h-2 rounded-full mt-2 bg-[#98D89E]"></div>
                       <div className="flex flex-col items-start">
-                        <h1 className="font-extrabold text-sm">Basic Tees</h1>
-                        <p className="text-xs">55%</p>
+                        <h1 className="font-extrabold text-sm">Mens</h1>
                       </div>
                     </div>
                     {/* stats 2 */}
                     <div className="flex gap-2 flex-wrap">
                       <div className="w-2 h-2 rounded-full mt-2 bg-[#f6dc7d]"></div>
                       <div className="flex flex-col items-start">
-                        <h1 className="font-extrabold text-sm">
-                          Custom Short Pants
-                        </h1>
-                        <p className="text-xs">55%</p>
+                        <h1 className="font-extrabold text-sm">Women</h1>
                       </div>
                     </div>
                     {/* stats 3 */}
                     <div className="flex gap-2 flex-wrap">
                       <div className="w-2 h-2 rounded-full mt-2 bg-[#EE8484]"></div>
                       <div className="flex flex-col items-start">
-                        <h1 className="font-extrabold text-sm">
-                          Super Hoodies
-                        </h1>
-                        <p className="text-xs">14%</p>
+                        <h1 className="font-extrabold text-sm">Electronics</h1>
                       </div>
                     </div>
                   </div>
@@ -646,63 +650,65 @@ export const Dashboard = () => {
             </div>
             {/* add  */}
             <div className=" shadow-lg border-2  rounded-2xl border-[#e2e8f0] w-1/2 max-lg:w-full  flex items-center justify-center max-sm:mb-4">
-              {state.length !== 0 ? (
-                state.map(({ Name, Contact, Email, Instagram, Youtube }) => {
-                  return (
-                    <div className="w-full h-full p-5">
-                      <h1 className="text-2xl font-bold">{Name}</h1>
-                      <div className="p-4">
-                        <div className="flex justify-between max-lg:flex-col ">
-                          {/* contact */}
-                          <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
-                            <div className="bg-[#E9F9EB] w-8 h-8 rounded-full flex items-center justify-center">
-                              <img
-                                src="/assets/contact_logo.png"
-                                alt="contact"
-                              />
+              {state.profile.length !== 0 ? (
+                state.profile.map(
+                  ({ id, Name, Contact, Email, Instagram, Youtube }) => {
+                    return (
+                      <div className="w-full h-full p-5" key={id}>
+                        <h1 className="text-2xl font-bold">{Name}</h1>
+                        <div className="p-4">
+                          <div className="flex justify-between max-lg:flex-col ">
+                            {/* contact */}
+                            <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
+                              <div className="bg-[#E9F9EB] w-8 h-8 rounded-full flex items-center justify-center">
+                                <img
+                                  src="/assets/contact_logo.png"
+                                  alt="contact"
+                                />
+                              </div>
+                              <h2 className="text-sm underline underline-offset-1">
+                                {Contact}
+                              </h2>
                             </div>
-                            <h2 className="text-sm underline underline-offset-1">
-                              {Contact}
-                            </h2>
+                            <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
+                              <div className="bg-[#FFE9EC]  w-8 h-8 rounded-full flex items-center justify-center">
+                                <img
+                                  src="/assets/logo-instagram.png"
+                                  alt="instagram"
+                                />
+                              </div>
+                              <h2 className="text-sm underline underline-offset-1">
+                                {Instagram}
+                              </h2>
+                            </div>
                           </div>
-                          <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
-                            <div className="bg-[#FFE9EC]  w-8 h-8 rounded-full flex items-center justify-center">
-                              <img
-                                src="/assets/logo-instagram.png"
-                                alt="instagram"
-                              />
+                          <div className=" flex justify-between max-lg:flex-col mt-2">
+                            {/* email & youtube */}
+                            <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
+                              <div className="bg-[#E4DFF2] w-8 h-8 rounded-full flex items-center justify-center">
+                                <img src="/assets/Mail.png" alt="mail" />
+                              </div>
+                              <h2 className="text-sm underline underline-offset-1">
+                                {Email}
+                              </h2>
                             </div>
-                            <h2 className="text-sm underline underline-offset-1">
-                              {Instagram}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className=" flex justify-between max-lg:flex-col mt-2">
-                          {/* email & youtube */}
-                          <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
-                            <div className="bg-[#E4DFF2] w-8 h-8 rounded-full flex items-center justify-center">
-                              <img src="/assets/Mail.png" alt="mail" />
+                            <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
+                              <div className="bg-[#FFE9E9] w-8 h-8 rounded-full flex items-center justify-center">
+                                <img
+                                  src="/assets/logo-youtube.png"
+                                  alt="youtube"
+                                />
+                              </div>
+                              <h2 className="text-sm underline underline-offset-1">
+                                {Youtube}
+                              </h2>
                             </div>
-                            <h2 className="text-sm underline underline-offset-1">
-                              {Email}
-                            </h2>
-                          </div>
-                          <div className="flex w-1/2 items-center justify-start gap-3 max-lg:w-full">
-                            <div className="bg-[#FFE9E9] w-8 h-8 rounded-full flex items-center justify-center">
-                              <img
-                                src="/assets/logo-youtube.png"
-                                alt="youtube"
-                              />
-                            </div>
-                            <h2 className="text-sm underline underline-offset-1">
-                              {Youtube}
-                            </h2>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })
+                    );
+                  }
+                )
               ) : (
                 <div className="flex flex-col items-center justify-center gap-3 max-sm:h-60">
                   <div className="h-16 w-16 rounded-full bg-[#F5F5F5] flex items-center justify-center">

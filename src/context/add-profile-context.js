@@ -4,8 +4,10 @@ const ProfileContext = createContext(null);
 
 const useProfile = () => useContext(ProfileContext);
 
-let initialState = [];
-
+let initialState = {
+  profile: [],
+  chartDataFromAPI: [],
+};
 
 const ProfileProvider = ({ children }) => {
   const [state, dispatch] = useReducer(profileReducer, initialState);
